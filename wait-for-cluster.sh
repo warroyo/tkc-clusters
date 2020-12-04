@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. env.sh
-
 currentstatus=$(kubectl get tkc ${CLUSTER_NAME} -o=jsonpath='{.status.phase}' -n ${NAMESPACE})
 statusdone="running"
 while [ "$currentstatus" != "$statusdone" ]
