@@ -1,0 +1,27 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1
+kind: TanzuKubernetesCluster
+metadata:
+  name: tkc-git-ops
+spec:
+  distribution:
+    version: v1.18.5                           #The full image name is specified
+  topology:
+    controlPlane:
+      count: 1                                 #3 control plane nodes
+      class: best-effort-medium               #large size VM
+      storageClass: k8s-policy #Specific storage class for control plane
+    workers:
+      count: 1                                 #5 worker nodes
+      class: best-effort-medium              #extra large size VM
+      storageClass: k8s-policy   #Specific storage class for workers
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks: ["198.51.100.0/12"]        #Cannot overlap with Supervisor Cluster
+      pods:
+        cidrBlocks: ["192.0.2.0/16"]           #Cannot overlap with Supervisor Cluster
+    storage:
+      classes: ["k8s-policy"]           #Named PVC storage classes
+      defaultClass: k8s-policy                  #Default PVC storage class
