@@ -1,7 +1,7 @@
 #!/bin/bash
 
-NAMESPACE=$(kubectl apply -f cluster.yml --dry-run -o=jsonpath='{.metadata.namespace}')
-CLUSTER_NAME=$(kubectl apply -f cluster.yml --dry-run -o=jsonpath='{.metadata.name}')
+. env.sh
+
 currentstatus=$(kubectl get tkc ${CLUSTER_NAME} -o=jsonpath='{.items[0].status.phase}' -n ${NAMESPACE})
 statusdone="running"
 while [ "$currentstatus" != "$statusdone" ]
