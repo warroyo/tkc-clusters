@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. env.sh
+echo "attaching ${CLUSTER_NAME} to TMC"
 
 TMC_API_TOKEN=$1
 
