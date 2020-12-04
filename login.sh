@@ -2,7 +2,7 @@
 
 VSPHERE_WITH_TANZU_CONTROL_PLANE_IP=${input.control_plane_ip}
 VSPHERE_WITH_TANZU_USERNAME=${var.vsphere_user}
-VSPHERE_WITH_TANZU_PASSWORD=${var.vsphere_password}
+VSPHERE_WITH_TANZU_PASSWORD=${VSPEHRE_PASS}
 
 
 KUBECTL_VSPHERE_PATH=/usr/local/bin/kubectl-vsphere
