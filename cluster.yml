@@ -12,7 +12,7 @@ spec:
       class: best-effort-medium               #large size VM
       storageClass: k8s-policy #Specific storage class for control plane
     workers:
-      count: 2                               #5 worker nodes
+      count: 1                               #5 worker nodes
       class: best-effort-medium              #extra large size VM
       storageClass: k8s-policy   #Specific storage class for workers
   settings:
