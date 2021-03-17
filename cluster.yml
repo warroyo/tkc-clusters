@@ -5,7 +5,7 @@ metadata:
   namespace: seti-labs-rd
 spec:
   distribution:
-    fullVersion: v1.18.10+vmware.1-tkg.1.3a6cd48.629                          #The full image name is specified
+    fullVersion: v1.18.10+vmware.1-tkg.1.3a6cd48                          #The full image name is specified
   topology:
     controlPlane:
       count: 1                                 #3 control plane nodes
