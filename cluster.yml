@@ -1,7 +1,7 @@
 apiVersion: run.tanzu.vmware.com/v1alpha1
 kind: TanzuKubernetesCluster
 metadata:
-  name: tkc-git-ops
+  name: tkc-git-ops2
   namespace: seti-labs-rd
 spec:
   distribution:
